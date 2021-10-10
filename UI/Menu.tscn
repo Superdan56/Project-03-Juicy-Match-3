@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://UI/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/BrokenGlass.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/background01.png" type="Texture" id=3]
+[ext_resource path="res://Assets/background02.png" type="Texture" id=4]
+[ext_resource path="res://Assets/background03.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 456.21, 426.651 )
+scale = Vector2( 3.19167, 4.79259 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 461.863, 482.779 )
+scale = Vector2( 3.21011, 4.81709 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 459.871, 476.25 )
+scale = Vector2( 3.21011, 4.80776 )
+texture = ExtResource( 5 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 566.0
+margin_bottom = 482.0
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 583.0
+margin_bottom = 512.0
+custom_fonts/font = SubResource( 1 )
+text = "Gem Match"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+margin_left = 238.0
+margin_top = 512.0
+margin_right = 338.0
+margin_bottom = 552.0
+custom_fonts/font = SubResource( 2 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 238.0
+margin_top = 562.0
+margin_right = 338.0
+margin_bottom = 602.0
+custom_fonts/font = SubResource( 3 )
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
